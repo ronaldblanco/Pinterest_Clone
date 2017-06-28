@@ -1,7 +1,7 @@
 'use strict';
 
 var path = process.cwd();
-var ClickHandler = require(path + '/app/controllers/clickHandler.server.js');
+var WinHandler = require(path + '/app/controllers/winHandler.server.js');
 
 module.exports = function (app, passport) {
 
@@ -13,7 +13,7 @@ module.exports = function (app, passport) {
 		}
 	}
 
-	var clickHandler = new ClickHandler();
+	var winHandler = new WinHandler();
 
 	app.route('/')
 		.get(isLoggedIn, function (req, res) {
@@ -50,8 +50,12 @@ module.exports = function (app, passport) {
 			failureRedirect: '/login'
 		}));
 
-	app.route('/api/:id/clicks')
-		.get(isLoggedIn, clickHandler.getClicks)
-		.post(isLoggedIn, clickHandler.addClick)
-		.delete(isLoggedIn, clickHandler.resetClicks);
+	app.route('/api/:id/wins')
+		.get(isLoggedIn, winHandler.getWins);
+		//.post(isLoggedIn, winHandler.addWin)
+		//.delete(isLoggedIn, winHandler.deleteWin);
+		
+	app.route('/api/:id/winsadd')
+		.post(isLoggedIn, winHandler.addWin);
+		
 };
