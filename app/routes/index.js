@@ -2,6 +2,7 @@
 
 var path = process.cwd();
 var WinHandler = require(path + '/app/controllers/winHandler.server.js');
+var PublicHandler = require(path + '/app/controllers/publicHandler.server.js');
 
 module.exports = function (app, passport) {
 
@@ -12,8 +13,17 @@ module.exports = function (app, passport) {
 			res.redirect('/login');
 		}
 	}
+	
+	function isNotLoggedIn (req, res, next) {
+		//if (req.isAuthenticated()) {
+			return next();
+		//} else {
+			//res.redirect('/login');
+		//}
+	}
 
 	var winHandler = new WinHandler();
+	var publicHandler = new PublicHandler();
 
 	app.route('/')
 		.get(isLoggedIn, function (req, res) {
@@ -57,5 +67,17 @@ module.exports = function (app, passport) {
 		
 	app.route('/api/:id/winsadd')
 		.post(isLoggedIn, winHandler.addWin);
+		
+	app.route('/api/:id/winsdel')
+		.delete(isLoggedIn, winHandler.deleteWin);
+		
+	app.route('/api/:id/winslike')
+		.post(isLoggedIn, winHandler.likeWin);
+		
+	/*app.route('/api/:id/winsunlike')
+		.get(isLoggedIn, winHandler.unLikeWin);*/
+		
+	app.route('/api/:id/public')
+		.get(isNotLoggedIn, publicHandler.getWins);
 		
 };
