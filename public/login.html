@@ -20,6 +20,30 @@
     });
     </script> 
     <div id="includedHead"></div>
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://masonry.desandro.com/masonry.pkgd.js"></script>
+    <script>
+    $(function(){
+      
+			var $grid = $('.grid').masonry({
+  itemSelector: '.grid-item-public',
+  columnWidth: 160
+});
+
+$grid.on( 'click', '.grid-item-public', function() {
+  // change size of item via class
+  $( this ).toggleClass('grid-item--gigante');
+  // trigger layout
+  $grid.masonry();
+});
+
+});
+			</script>
+			
+			
 
 	</head>
 
@@ -39,7 +63,8 @@
 			<br>
 			
 			<!--<h1>Masonry - Initialize in HTML</h1>-->
-
+			
+			
 <div class="grid" data-masonry='{ "itemSelector": ".grid-item-public", "columnWidth": 160 }' id="grid">
   <!--<div class="grid-item"><img src = "https://static.pexels.com/photos/55787/pexels-photo-55787.jpeg" class = "myimg img-rounded"><p class="txt">Sky number 1</p><p class="txtuser">By User Name</p><button type="submit" class="minibtn">LIKE</button> <img src = "https://static.pexels.com/photos/55787/pexels-photo-55787.jpeg" class = "user img-rounded"></div>
   <div class="grid-item grid-item--width2 grid-item--height2"><img src = "https://ak8.picdn.net/shutterstock/videos/24216154/thumb/10.jpg?i10c=img.resize(height:160)" class = "myimg"></div>

@@ -248,13 +248,32 @@ span {
   border-radius: 5px;
 }
 
-.grid-item--width2 { width: 320px; }
+.grid-item-public:hover {
+  background: #A2C;
+  border-color: white;
+  cursor: pointer;
+}
+
+/*.grid-item--width2 { width: 320px; }
 .grid-item--width3 { width: 480px; }
 .grid-item--width4 { width: 640px; }
 
 .grid-item--height2 { height: 280px; }
 .grid-item--height3 { height: 300px; }
-.grid-item--height4 { height: 360px; }
+.grid-item--height4 { height: 360px; }*/
+
+.grid-item--width2 { width: 28%; }
+.grid-item--width3 { width: 34%; }
+.grid-item--width4 { width: 40%; }
+
+.grid-item--height2 { height: auto; }
+.grid-item--height3 { height: auto; }
+.grid-item--height4 { height: auto; }
+
+.grid-item--gigante {
+	width: 50%;
+	height: auto;
+}
 
 .myimg {
 	width:95%;
