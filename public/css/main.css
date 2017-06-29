@@ -293,6 +293,13 @@ span {
 	margin-left:73%
 }
 
+.userbig{
+	width:20%;
+	height: 10%;
+	margin-top: -10%;
+	margin-left:73%
+}
+
 .publicuser{
 	width:20%;
 	height: 15%;
@@ -300,10 +307,24 @@ span {
 	margin-left:73%
 }
 
+.publicuserbig{
+	width:20%;
+	height: 15%;
+	margin-top: -1%;
+	margin-left:73%
+}
+
 .allwinsuser{
 	width:20%;
 	height: 15%;
 	margin-top: -20%;
+	margin-left:73%
+}
+
+.allwinsuserbig{
+	width:20%;
+	height: 12%;
+	margin-top: -12%;
 	margin-left:73%
 }
 
@@ -316,5 +337,11 @@ span {
 .txtuser{
 	font-size: 10px;
 	margin-top: -12%;
+	margin-left:0%
+}
+
+.txtuserbig{
+	font-size: 10px;
+	margin-top: -6%;
 	margin-left:0%
 }
