@@ -4,8 +4,24 @@ var Users = require('../models/users.js');
 var Users1 = require('../models/users.js');
 var url = require("urlparser");
 
-function WinHandler () {
+//var gm = require('gm');
+var request = require('request');
+//var url = "http://strabo.com/gallery/albums/wallpaper/foo_wallpaper.sized.jpg";
+var imagesize = require('imagesize');
 
+		/*function imageSize(url){
+			var stream = request(url);
+			imagesize(stream, function (err, result) {
+				if (err) { throw err; }
+				
+    				console.log('result of fuction->'+result); // {type, width, height}
+    				return JSON.parse(result);
+				
+			});
+		}*/
+
+function WinHandler () {
+	
 	this.getWins = function (req, res) {
 		Users
 			.findOne({ 'github.id': req.user.github.id }, { '_id': false })
@@ -19,8 +35,22 @@ function WinHandler () {
 	this.addWin = function (req, res) {
 		
 		var myUrl = url.parse(req.originalUrl);
+		//var info = {};
 		//console.log(myUrl.query);
-		var newWin = {'name': unescape(myUrl.query.params.name), 'image':myUrl.query.params.image, 'username':req.user.github.username, 'userimage':'https://static.pexels.com/photos/55787/pexels-photo-55787.jpeg', 'likes': Array() };
+		
+		var stream = request(myUrl.query.params.image);
+		imagesize(stream, function (err, result) {
+			if (err) { throw err; }
+				
+    			//console.log('result of fuction->'+result); // {type, width, height}
+    			var info = result;
+    			
+    			
+    			
+    			
+    	//var info = imageSize(myUrl.query.params.image);
+		//console.log(info);
+		var newWin = {'name': unescape(myUrl.query.params.name), 'image':myUrl.query.params.image, 'username':req.user.github.username, 'userimage':'https://static.pexels.com/photos/55787/pexels-photo-55787.jpeg', 'likes': Array(), 'info': info};
 		Users
 			.findOneAndUpdate({ 'github.id': req.user.github.id }, { $push: { 'wins.images': newWin } })
 			.exec(function (err, result) {
@@ -28,7 +58,15 @@ function WinHandler () {
 
 					res.json(result.wins);
 				}
-			);
+			);		
+    			
+    			
+    			
+    			
+				
+		});
+		
+		
 	};
 
 	this.deleteWin = function (req, res) {
