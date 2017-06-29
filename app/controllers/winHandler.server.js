@@ -94,6 +94,24 @@ function WinHandler () {
 		
 	};
 	
+	this.getAllWins = function (req, res) {
+		Users
+			.find({}, {})
+			.exec(function (err, result) {
+				if (err) { throw err; }
+				
+				var final = [];
+				result.forEach(function(user){
+					user.wins.images.forEach(function(image){
+						final.push(image);
+					});
+					
+				});
+				//console.log(final);
+				res.send(final);
+			});
+	};
+	
 	/*this.unLikeWin = function (req, res) {
 		var myUrl = url.parse(req.originalUrl);
 		//console.log(myUrl.query);

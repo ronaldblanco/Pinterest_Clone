@@ -45,6 +45,11 @@ module.exports = function (app, passport) {
 		.get(isLoggedIn, function (req, res) {
 			res.sendFile(path + '/public/profile.html');
 		});
+		
+	app.route('/allwins')
+		.get(isLoggedIn, function (req, res) {
+			res.sendFile(path + '/public/allWins.html');
+		});
 
 	app.route('/api/:id')
 		.get(isLoggedIn, function (req, res) {
@@ -79,5 +84,8 @@ module.exports = function (app, passport) {
 		
 	app.route('/api/:id/public')
 		.get(isNotLoggedIn, publicHandler.getWins);
+		
+	app.route('/api/:id/allwins')
+		.get(isLoggedIn, winHandler.getAllWins);
 		
 };

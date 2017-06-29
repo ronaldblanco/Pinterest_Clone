@@ -41,9 +41,10 @@
    
    grid.addEventListener('click', function () {
 
-      var query = document.querySelector('input[name = "radioLike"]:checked').value;
-      console.log(query);
-      if(query != null && query != undefined){
+      if(document.querySelector('input[name = "radioLike"]:checked').value != null && document.querySelector('input[name = "radioLike"]:checked').value != undefined){
+         var query = document.querySelector('input[name = "radioLike"]:checked').value;
+         //console.log(query);
+      
          ajaxFunctions.ajaxRequest('POST', apiUrl + 'like' + query, function () {
             ajaxFunctions.ajaxRequest('GET', apiUrl, updateGrid);
          });

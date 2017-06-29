@@ -17,6 +17,8 @@
 
 	<header>
 		<p>Welcome, <span id="display-name"></span>!</p>
+		<a class="menu" href="/">Home</a>
+		<p>|</p>
 		<a class="menu" href="/profile">Profile</a>
 		<p>|</p>
 		<a class="menu" href="/logout">Logout</a>
@@ -37,11 +39,10 @@
 				<button class="btn btn-delete">RESET</button>
 				
 			</div>-->
-			Win Name:<input type="text" name="name" id="name"><br>
+			<!--Win Name:<input type="text" name="name" id="name"><br>
 			Image:<input type="text" name="image" id="image"><br>
               <button type="submit" class="btn btn-add" id ="addwin">New Win!</button>
-              <button type="submit" class="btn btn-delete" id ="delwin">Delete Win!</button>
-              <a class="menu" href="/allwins">All Wins</a>
+              <button type="submit" class="btn btn-delete" id ="delwin">Delete Win!</button>-->
               
               
               <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 160 }' id="grid">
@@ -52,7 +53,7 @@
 		
 		
 		<script type="text/javascript" src="common/ajax-functions.js"></script>
-		<script type="text/javascript" src="controllers/winController.client.js"></script>
+		<script type="text/javascript" src="controllers/allwinsController.client.js"></script>
 		<script type="text/javascript" src="controllers/userController.client.js"></script>
 	</body>
 

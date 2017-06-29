@@ -14,7 +14,7 @@
       //console.log(wins.images);
       grid.innerHTML = '';
       for(var a = 0; a < wins.length; a++){
-         grid.innerHTML = grid.innerHTML + '<div class="grid-item"><img src = "'+wins[a].image+'" class = "myimg img-rounded"><p class="txt">'+wins[a].name+'</p><p class="txtuser">By '+wins[a].username+'</p> <img src = "'+wins[a].userimage+'" class = "user img-rounded"></div>'
+         grid.innerHTML = grid.innerHTML + '<div class="grid-item-public"><img src = "'+wins[a].image+'" class = "myimg img-rounded"><p class="txt">'+wins[a].name+'</p><p class="txtuser">By '+wins[a].username+'</p> <img src = "'+wins[a].userimage+'" class = "publicuser img-rounded"></div>'
       }
       
    }
