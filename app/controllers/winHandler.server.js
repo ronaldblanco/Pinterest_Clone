@@ -50,7 +50,7 @@ function WinHandler () {
     			
     	//var info = imageSize(myUrl.query.params.image);
 		//console.log(info);
-		var newWin = {'name': unescape(myUrl.query.params.name), 'image':myUrl.query.params.image, 'username':req.user.github.username, 'userimage':'https://static.pexels.com/photos/55787/pexels-photo-55787.jpeg', 'likes': Array(), 'info': info};
+		var newWin = {'name': unescape(myUrl.query.params.name), 'image':myUrl.query.params.image, 'username':req.user.github.username, 'userimage':req.user.github.photo, 'likes': Array(), 'info': info};
 		Users
 			.findOneAndUpdate({ 'github.id': req.user.github.id }, { $push: { 'wins.images': newWin } })
 			.exec(function (err, result) {

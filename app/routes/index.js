@@ -64,6 +64,15 @@ module.exports = function (app, passport) {
 			successRedirect: '/',
 			failureRedirect: '/login'
 		}));
+		
+	app.route('/auth/twitter')
+		.get(passport.authenticate('twitter'));
+
+	app.route('/auth/twitter/callback')
+		.get(passport.authenticate('twitter', {
+			successRedirect: '/',
+			failureRedirect: '/login'
+		}));
 
 	app.route('/api/:id/wins')
 		.get(isLoggedIn, winHandler.getWins);
