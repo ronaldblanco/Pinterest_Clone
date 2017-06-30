@@ -249,7 +249,7 @@ span {
 }
 
 .grid-item-public:hover {
-  background: #A2C;
+  background: #b3ffb3;
   border-color: white;
   cursor: pointer;
 }
@@ -265,7 +265,7 @@ span {
 }
 
 .grid-item-allwins:hover {
-  background: #A2C;
+  background: #b3ffb3;
   border-color: white;
   cursor: pointer;
 }
@@ -383,6 +383,6 @@ span {
 
 .txtuserbig{
 	font-size: 10px;
-	margin-top: -6%;
+	margin-top: -3%;
 	margin-left:0%
 }

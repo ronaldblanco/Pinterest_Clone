@@ -10,11 +10,11 @@
    var apiUrl = appUrl + '/api/:id/allwins';
 
    function gridConfig(w,h){
-      if(w > 319 && h > 279) return 'grid-item--width2 grid-item--height2';
+      if(w > 639 && h > 359) return 'grid-item--width4 grid-item--height4';
       else if(w > 479 && h > 299) return 'grid-item--width3 grid-item--height3';
-      else if(w > 639 && h > 359) return 'grid-item--width4 grid-item--height4';
-      else if(w > 479) return 'grid-item--width3';
+      else if(w > 319 && h > 279) return 'grid-item--width2 grid-item--height2';
       else if(w > 639) return 'grid-item--width4';
+      else if(w > 479) return 'grid-item--width3';
       else if(w > 319) return 'grid-item--width2';
       else if(h > 359) return 'grid-item--height4';
       else if(h > 299) return 'grid-item--height3';

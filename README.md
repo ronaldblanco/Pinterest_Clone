@@ -1,3 +1,27 @@
+# Pinterest Clone
+
+[![Join the chat at https://gitter.im/johnstonbl01/clementinejs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/johnstonbl01/clementinejs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+## Autor
+
+Created by Ronald Blanco.
+
+pnald.blanco@gmail.com<br>
+https://github.com/ronaldblanco<br>
+https://www.linkedin.com/in/ronald-blanco-carrazana-5b506268/<br>
+http://codepen.io/ronaldblanco/#<br>
+https://www.freecodecamp.com/ronaldblanco<br>
+
+## User Story
+
+As an unauthenticated user, I can login with Twitter.<br>
+As an authenticated user, I can link to images.<br>
+As an authenticated user, I can delete images that I've linked to.<br>
+As an authenticated user, I can see a Pinterest-style wall of all the images I've linked to.<br>
+As an unauthenticated user, I can browse other users' walls of images.<br>
+As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)<br>
+Hint: Masonry.js is a library that allows for Pinterest-style image grids.<br>
+
 # Clementine.js FCC Boilerplate
 
 [![Join the chat at https://gitter.im/johnstonbl01/clementinejs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/johnstonbl01/clementinejs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
